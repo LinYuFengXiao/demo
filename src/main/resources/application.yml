@@ -1,0 +1,23 @@
+# 默认的数据库名
+database:
+  name: pmcc-flood-prevent
+
+spring:
+  datasource:
+    driver_Class: com.mysql.jdbc.Driver
+    url: jdbc:mysql://172.18.70.151:3306/pmcc-flood-prevent?useUnicode=true&characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: nT2q26QFtHK!7fi#
+    initialization-mode: always
+    platform: mysql
+    separator: ;
+    data: classpath:message_classification_encoding-data.sql
+    schema: classpath:message_classification_encoding-schema.sql # schema必须也存在，若只存在data，data中的sql也不会被执行
+
+logging:
+  level:
+    root: info
+    org:
+      springframework:
+        jdbc:
+          core: debug
